@@ -137,7 +137,7 @@ transition-function () {
 }
 
 
-extented-transition-function () {
+extended-transition-function () {
 
     local STATE=$1
     local WORD=$2
@@ -152,19 +152,11 @@ extented-transition-function () {
 
     if [ $LW -eq 1 ];
     then
-        if [ $(transition-function $STATE $WORD) == 'q3' ]; then
-            echo 'The word belongs to the language! ;)'
-        else
-            echo 'The word dont belongs to the language, sorry :( i stopped on ' $(transition-function $STATE $WORD) 'state'
-        fi
+        transition-function $STATE $WORD
         return 0
     fi
 
-    STATE=$(transition-function $STATE ${WORD:0:1})
-
-    WORD=${WORD/?}
-
-    extented-transition-function $STATE $WORD
+    extended-transition-function $($(extended-transition-function $STATE ${WORD%?}) ${WORD: -1})
 }
 
-extented-transition-function 'q0' 'abaaba'
+extended-transition-function 'q0' 'abaaba'
