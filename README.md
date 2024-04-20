@@ -17,3 +17,12 @@ Implementar computacionalmente a função de transição estendida do Autômato 
 Como tarefa, a implementação da função de transição estendida cuja definição foi apresentada acima pode ser feita em qualquer linguagem de programação de alto nível e deverá ser utilizado, para isto, o AFD abaixo:
 
 ![](/src/AFD.png)
+
+## Executando
+
+```
+	chmod +x funcao-transicao-estendida-AFD.sh
+```
+```
+	./funcao-transicao-estendida.sh-AFD.sh
+```
